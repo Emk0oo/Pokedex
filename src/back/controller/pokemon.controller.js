@@ -22,6 +22,18 @@ exports.getPokemonById = (req, res) => {
         });
 };
 
+exports.getPokemonByName = (req, res) => {
+    const url = `https://pokeapi.co/api/v2/pokemon/${req.params.name}`;
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            res.json(data);
+        })
+        .catch(error => {
+            res.json(error);
+        });
+};
+
 
 
 module.exports = exports;
