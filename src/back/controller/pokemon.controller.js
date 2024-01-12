@@ -34,18 +34,18 @@ exports.getPokemonByName = (req, res) => {
         });
 };
 
-// exports.getRandomPokemon = (req, res) => {
-//     let random =1;
-//     const url = `https://pokeapi.co/api/v2/pokemon/` + random;
-//     console.log(url);
-//     fetch(url)
-//         .then(response => response.json())
-//         .then(data => {
-//             res.json(data);
-//         })
-//         .catch(error => {
-//             res.json(error);
-//         });
-// };
+exports.getRandomPokemon = (req, res) => {
+    let random =1;
+    const url = `https://pokeapi.co/api/v2/pokemon/1` ;
+    console.log(url);
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            res.json(data);
+        })
+        .catch(error => {
+            res.json(error);
+        });
+};
 
 module.exports = exports;
