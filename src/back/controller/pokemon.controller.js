@@ -35,8 +35,9 @@ exports.getPokemonByName = (req, res) => {
 };
 
 exports.getRandomPokemon = (req, res) => {
-    let random =1;
-    const url = `https://pokeapi.co/api/v2/pokemon/1` ;
+    let random = Math.floor(Math.random() * 151) + 1;
+    console.log(random);
+    const url = `https://pokeapi.co/api/v2/pokemon/${random}` ;
     console.log(url);
     fetch(url)
         .then(response => response.json())
